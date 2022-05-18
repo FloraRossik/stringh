@@ -1,3 +1,4 @@
+#include "string.h"
 #include <string.h>
 #include <stdio.h>
 
@@ -25,11 +26,11 @@ char *ft_strcat(char *dest, const char *src)
   return (dest);
 }
 
-int main()
-{
-  char str1[40] = "Hello";
-  char str2[] = "my name is Florida";
-  ft_strcat(str1, str2);
-  printf("%s\n", str1);
-  return 0;
-}
+// int main()
+// {
+//   char str1[40] = "Hello";
+//   char str2[] = "my name is Florida";
+//   ft_strcat(str1, str2);
+//   printf("%s\n", str1);
+//   return 0;
+// }

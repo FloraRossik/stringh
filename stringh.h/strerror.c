@@ -1,10 +1,9 @@
 #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <errno.h>
 #include <fcntl.h>
 
-char* fun(int err){
+char *ft_strerror(int errnum){
 
 char *arr[132];
 

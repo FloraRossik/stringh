@@ -1,3 +1,4 @@
+#include "string.h"
 #include <string.h>
 #include <stdio.h>
 
@@ -6,8 +7,8 @@ char *ft_strstr(const char *haystack, const char *needle)
   int j;
   unsigned char *tmp_str;
 
-  // if (new_haystack == "" || new_needle == "")
-  //   return (NULL);
+  if (*needle == '\0')
+    return (char *)haystack;
 
   while (*haystack != '\0')
   {
@@ -25,12 +26,12 @@ char *ft_strstr(const char *haystack, const char *needle)
   return (NULL);
 }
 
-int main()
-{
-  char *result;
-  char str1[] = "Hel GTA llo error Juy MAY";
-  char str2[] = "Juy";
-  result = ft_strstr(str1,str2);
-  printf("%s", result);
-  return 0;
-}
+// int main()
+// {
+//   char *result;
+//   char str1[] = "Hel GTA llo error Juy MAY";
+//   char str2[] = "Juy";
+//   result = ft_strstr(str1,str2);
+//   printf("%s", result);
+//   return 0;
+// }

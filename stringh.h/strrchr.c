@@ -1,15 +1,16 @@
+#include "string.h"
 #include <string.h>
 #include <stdio.h>
 
-char *ft_strrchr(const char *s, int c)
+char *ft_strrchr(const char *str, int c)
 {
   int start;
   
-  start = strlen(s);
+  start = strlen(str);
   while (start >= 0)
   {
-    if (s[start] == c)
-      return ((char *)&s[start]);
+    if (str[start] == c)
+      return ((char *)&str[start]);
     start--;
   }
   return (NULL);

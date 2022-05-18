@@ -1,18 +1,19 @@
+#include "string.h"
 #include <string.h>
 #include <stdio.h>
 
-char *ft_strpbrk(const char *s, const char *accept)
+char *ft_strpbrk(const char *str1, const char *str2)
 {
-  if (s == NULL || strlen(accept) == 0)
+  if (str1 == NULL || strlen(str2) == 0)
     return (NULL);
 
-  while (*s != '\0')
+  while (*str1 != '\0')
   {
-    if(strchr(accept, *s) != NULL)
+    if(strchr(str2, *str1) != NULL)
     {
-      return(char *)s;
+      return(char *)str1;
     }
-    s++;
+    str1++;
   }
   return (NULL);
 }

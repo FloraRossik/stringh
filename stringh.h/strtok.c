@@ -1,8 +1,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <errno.h>
-#include <fcntl.h>
 
 int find_symb(char *str, int c)
 {
@@ -88,16 +86,15 @@ char **ft_strtok(char *str, char *sep)
   return (strtok);
 }
 
-int main()
-{
-  char **result;
-  char *str = "Hello \0my name is\0";
-  char *sep = "yeH";
-  result = ft_strtok(str, sep);
-  for (size_t i = 0; result[i] != NULL; i++)
-  {
-      printf("%s\n", result[i]);
-  }
-  return (0);
-}
-
+// int main()
+// {
+//   char **result;
+//   char *str = "Hello \0my name is\0";
+//   char *sep = "yeH";
+//   result = ft_strtok(str, sep);
+//   for (size_t i = 0; result[i] != NULL; i++)
+//   {
+//       printf("%s\n", result[i]);
+//   }
+//   return (0);
+// }

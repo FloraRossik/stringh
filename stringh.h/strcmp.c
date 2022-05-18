@@ -1,3 +1,4 @@
+#include "string.h"
 #include <string.h>
 #include <stdio.h>
 
@@ -19,12 +20,12 @@ int ft_strcmp(const char *s1, const char *s2)
   return (tmp_s1[i] - tmp_s2[i]);
 }
 
-int main()
-{
-  int result;
-  char str1[] = "Hellol";
-  char str2[] = "Hello";
-  result = ft_strcmp(str1, str2);
-  printf("%d", result);
-  return 0;
-}
+// int main()
+// {
+//   int result;
+//   char str1[] = "Hellol";
+//   char str2[] = "Hello";
+//   result = ft_strcmp(str1, str2);
+//   printf("%d", result);
+//   return 0;
+// }

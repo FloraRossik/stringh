@@ -1,3 +1,4 @@
+#include "string.h"
 #include <string.h>
 #include <stdio.h>
 
@@ -46,12 +47,12 @@ size_t ft_strcspn(const char *str1, const char *str2)
   return (result);
 }
 
-int main()
-{
-  int result;
-  char str1[] = "Rita RiRiRiTQ";
-  char str2[] = "Ri";
-  result = ft_strcspn(str1, str2);
-  printf("%d", result);
-  return 0;
-}
+// int main()
+// {
+//   int result;
+//   char str1[] = "Rita RiRiRiTQ";
+//   char str2[] = "Ri";
+//   result = ft_strcspn(str1, str2);
+//   printf("%d", result);
+//   return 0;
+// }

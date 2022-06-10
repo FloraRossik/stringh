@@ -1,26 +1,16 @@
+#include "s21_string.h"
 
-#include <string.h>
-#include <stdio.h>
-
-char *ft_strrchr(const char *str, int c)
-{
+char *s21_strrchr(const char *str, int c) {
   int start;
-  
-  start = strlen(str);
-  while (start >= 0)
-  {
+
+  if (str == s21_NULL)
+    return (s21_NULL);
+
+  start = s21_strlen(str);
+  while (start >= 0) {
     if (str[start] == c)
       return ((char *)&str[start]);
     start--;
   }
-  return (NULL);
+  return (s21_NULL);
 }
-
-// int main()
-// {
-//   char *result;
-//   char str[] = "16786345036899996";
-//   result = ft_strrchr(str, '9');
-//   printf("%s", result);
-//   return 0;
-// }

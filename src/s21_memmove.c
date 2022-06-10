@@ -1,29 +1,21 @@
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "s21_string.h"
 
-void *ft_memmove(void *dest, void *src, size_t n)
-{
-    size_t i;
-    unsigned char *tmp_dest;
-    unsigned char *tmp_src;
+void *s21_memmove(void *dest, const void *src, size_t n) {
+    char *pp = (char *)src;
+    char *pp2 = (char *)dest;
 
-    tmp_dest = (unsigned char *)dest;
-    tmp_src = (unsigned char *)src;
-    i = 0;
-    while (i < n)
-    {
-        *tmp_dest++ = *tmp_src++;
-            i++;
+  if (dest == s21_NULL && src == s21_NULL)
+    return (s21_NULL);
+  if (pp2 > pp) {
+    while (n-- > 0)
+    pp2[n] = pp[n];
+  } else {
+  while (0 < n) {
+    *pp2 = *pp;
+    pp++;
+    pp2++;
+    n--;
     }
-    return (tmp_dest);
+  }
+  return (dest);
 }
-
-// int main()
-// {
-//     char str1[20] = "Hello";
-//     char str2[] = "";
-//     memmove(str1, str2, 10);
-//     printf("%s", str1);
-//     return 0;
-// }

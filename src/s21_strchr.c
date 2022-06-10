@@ -1,25 +1,18 @@
-#include <string.h>
-#include <stdio.h>
+#include "s21_string.h"
 
-char *ft_strchr(const char *str, int c)
-{
+char *s21_strchr(const char *str, int c) {
   unsigned char *tmp_s;
 
+  if (str == s21_NULL)
+    return (s21_NULL);
+
   tmp_s = (unsigned char *)str;
-  while (*tmp_s != '\0')
-  {
+  while (*tmp_s != '\0') {
     if (*tmp_s == c)
       return (char *)tmp_s;
     tmp_s++;
   }
-  return (NULL);
+  if (c == '\0')
+    return (char *)tmp_s;
+  return (s21_NULL);
 }
-
-// int main()
-// {
-//   char *result;
-//   char str[] = "Holywood Anjelina";
-//   result = ft_strchr(str, 'n');
-//   printf("%s", result);
-//   return 0;
-// }

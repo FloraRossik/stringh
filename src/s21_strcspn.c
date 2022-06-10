@@ -1,58 +1,35 @@
+#include "s21_string.h"
 
-#include <string.h>
-#include <stdio.h>
+size_t s21_strcspn(const char *str1, const char *str2) {
+  int i;
+  int j;
+  size_t count;
 
-size_t ft_strlen(const char *s)
-{
-  int count;
+  if (str1 == s21_NULL)
+    return (0);
+  if (*str2 == 0)
+    return (s21_strlen(str1));
 
   count = 0;
-  while (*s != '\0')
-  {
-    count++;
-    s++;
+  i = 0;
+  j = 0;
+  while (str1[i] != str2[j] && str1[i] != '\0') {
+    if (s21_strchr(str2, str1[i]) == s21_NULL)
+      count++;
+    if (s21_strchr(str2, str1[i]) != s21_NULL)
+      return (count);
+    i++;
+    j++;
   }
   return (count);
 }
 
-size_t ft_strcspn(const char *str1, const char *str2)
-{
-  size_t count;
-  size_t result;
-  size_t i;
-  size_t j;
-  unsigned char *tmp_str1;
-  unsigned char *tmp_str2;
-
-  tmp_str1 = (unsigned char *)str1;
-  tmp_str2 = (unsigned char *)str2;
-  i = 0;
-  count = 0;
-  result = 0;
-  while (tmp_str2[i] != '\0')
-  {
-    j = 0;
-    while (tmp_str1[j] != '\0')
-    {
-      if (tmp_str1[j] == tmp_str2[i])
-      {
-        count++;
-      }
-      j++;
-    }
-    i++;
-  }
-  result = ft_strlen(str1);
-  result -= count;
-  return (result);
-}
-
 // int main()
 // {
-//   int result;
-//   char str1[] = "Rita RiRiRiTQ";
-//   char str2[] = "Ri";
-//   result = ft_strcspn(str1, str2);
+//   size_t result;
+//   char str1[] = "This is - www.tutorialspoint.com - website";
+//   char test1[] = "-";
+//   result = s21_strcspn(str1, test1);
 //   printf("%d", result);
 //   return 0;
 // }

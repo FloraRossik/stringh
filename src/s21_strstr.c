@@ -1,37 +1,24 @@
+#include "s21_string.h"
 
-#include <string.h>
-#include <stdio.h>
+char *s21_strstr(const char *haystack, const char *needle) {
+  unsigned int i;
+  unsigned int j;
 
-char *ft_strstr(const char *haystack, const char *needle)
-{
-  int j;
-  unsigned char *tmp_str;
+  if (haystack == s21_NULL)
+    return (s21_NULL);
 
   if (*needle == '\0')
-    return (char *)haystack;
+      return ((char *)haystack);
 
-  while (*haystack != '\0')
-  {
-      j = 0;
-      tmp_str = (unsigned char *)haystack;
-      while (*haystack == needle[j])
-      {
-        if(needle[j + 1] == '\0')
-          return (char *)tmp_str;
-        j++;
-        haystack++;
-      }
-    haystack++;
+  i = 0;
+  while (haystack[i] != '\0') {
+    j = 0;
+    while (haystack[i + j] != '\0' && haystack[i + j] == needle[j]) {
+      if (needle[j + 1] == '\0')
+      return ((char *)haystack + i);
+      j++;
+    }
+    i++;
   }
-  return (NULL);
+  return (0);
 }
-
-// int main()
-// {
-//   char *result;
-//   char str1[] = "Hel GTA llo error Juy MAY";
-//   char str2[] = "Juy";
-//   result = ft_strstr(str1,str2);
-//   printf("%s", result);
-//   return 0;
-// }

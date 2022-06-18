@@ -2,54 +2,36 @@
 #include <string.h>
 #include <stdio.h>
 
-unsigned int is_delim(char c, const char *delim) {
-    int ret = 0;
-
-    while (*delim != '\0') {
-        if (c == *delim) {
-            ret = 1;
-            break;
-        }
-        delim++;
-    }
-    return ret;
-}
-
 char *s21_strtok(char *str, const char *delim) {
-    char *ret = s21_NULL;
-    int let_work = 1;
+  char *tmp_ptr;
+  static char *token = s21_NULL;
 
-    static char *backup_string;
-    if (!str)
-        str = backup_string;
-    while (1) {
-        if (is_delim(*str, delim)) {
-            str++;
-            continue;
-        }
-        if (*str == '\0') {
-            let_work = 0;
-        }
-        break;
-    }
+  if (delim == s21_NULL)
+    return (s21_NULL);
 
-    if (let_work) {
-        ret = str;
-        while (1) {
-            if (*str == '\0') {
-                backup_string = str;
-                break;
-            }
-            if (is_delim(*str, delim)) {
-                *str = '\0';
-                backup_string = str + 1;
-                break;
-            }
-            str++;
-        }
-    }
-
-    return ret;
+  if (str == s21_NULL)
+  {
+    if (token == s21_NULL)
+      return (s21_NULL);
+    str = token;
+  }
+  while (strchr(delim, *str) != s21_NULL)
+    str++;
+  tmp_ptr = str;
+  while (*str != '\0')
+  {
+    if (strchr(delim, *str) != s21_NULL)
+      break;
+    str++;
+  }
+  if (*str == '\0')
+  {
+    token = s21_NULL;
+    return (tmp_ptr);
+  }
+  *str = 0;
+  token = str + 1;
+  return (tmp_ptr);
 }
 
 
@@ -78,13 +60,13 @@ char *s21_strtok(char *str, const char *delim) {
 
 // int main()
 // {
-//    char str[60] = "This is - www.tutorialspoint.com - website";
-//    const char s[2] = "-";
+//    char str[60] = "School-21";
+//    const char s[3] = "Sc";
 //    char *token;
    
 //    /* get the first token */
 //    token = s21_strtok(str, s);
-   
+  
 //    /* walk through other tokens */
 //    while( token != NULL ) {
 //       printf( "%s\n", token );

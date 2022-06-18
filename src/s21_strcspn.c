@@ -27,7 +27,7 @@ size_t s21_strcspn(const char *str1, const char *str2) {
 // int main()
 // {
 //   size_t result;
-//   char str1[] = "This is - www.tutorialspoint.com - website";
+//   char str1[] = "tutorialspoint.com - website";
 //   char test1[] = "-";
 //   result = s21_strcspn(str1, test1);
 //   printf("%d", result);

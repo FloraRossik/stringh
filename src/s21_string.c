@@ -33,7 +33,7 @@ void *s21_memchr(const void *str, int c, s21_size_t n) {
   return (s21_NULL);
 }
 
-int s21_memcmp(const void* str1, const void* str2, s21_size_t n){
+int s21_memcmp(const void* str1, const void* str2, s21_size_t n) {
   size_t i;
   size_t j;
   unsigned char *tmp_s1;
@@ -94,7 +94,7 @@ void *s21_memmove(void* dest, const void* src, s21_size_t n) {
   return (dest);
 }
 
-void *s21_memset(void *str, int c, s21_size_t n){
+void *s21_memset(void *str, int c, s21_size_t n) {
   size_t i;
   unsigned char *tmp_s;
 
@@ -292,7 +292,7 @@ char *s21_strrchr(const char *str, int c) {
   return (s21_NULL);
 }
 
-s21_size_t s21_strspn(const char *str1, const char *str2){
+s21_size_t s21_strspn(const char *str1, const char *str2) {
   size_t count;
   unsigned char *tmp_str1;
   unsigned char *tmp_str2;
